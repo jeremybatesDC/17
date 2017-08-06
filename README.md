@@ -1,6 +1,6 @@
 # jbvueproj
 
-> jb vue project
+> jb vue project!
 
 ## Build Setup
 
