@@ -1,12 +1,20 @@
 <template>
-  <div id="app">
-    <header>
-      <span>Vue.js PWA</span>
-    </header>
-    <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
+  <div id="app" class="jBGrid">
+    <nav>
+      <a href="/">Home</a>
+      <a href="#about">About</a>
+      <a href="#sites">Sites</a>
+    </nav>
+    <header><h1>jB</h1></header>
+    <main id="mainContent">
       <router-view></router-view>
     </main>
+    <aside>
+      Aside
+    </aside>
+    <footer>
+      Footer
+    </footer>
   </div>
 </template>
 
@@ -16,39 +24,38 @@ export default {
 }
 </script>
 
-<style>
-body {
-  margin: 0;
+<style lang="scss">
+
+html {box-sizing: border-box;}
+*, *:before, *:after {box-sizing:inherit;}
+
+
+body {font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+
+img {max-width: 100%;}
+
+
+.skipLink {
+  position: fixed;
+  top: -20rem;
+  &:focus {
+    top:0;
+  }
 }
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+.jBGrid {
+  display: grid;
+  grid-template-areas:
+  'nav nav nav'
+  'header header header'
+  'aside main main'
+  'footer footer footer'
 }
 
-main {
-  text-align: center;
-  margin-top: 40px;
-}
+nav {grid-area:nav;}
+header {grid-area:header;}
+main {grid-area: main;}
+aside {grid-area: aside;}
+footer {grid-area: footer;}
 
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
-}
 </style>

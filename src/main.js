@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Home from '@/components/Home'
+import About from '@/components/About'
+import Sites from '@/components/sites'
 
 Vue.config.productionTip = false
 
@@ -11,5 +14,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App, Home, About, Sites }
 })
